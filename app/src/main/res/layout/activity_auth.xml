@@ -7,11 +7,29 @@
     tools:context=".AuthActivity">
 
     <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="197dp"
+        android:layout_height="77dp"
+        android:background="#FFEB3B"
+        android:backgroundTint="#D8C623"
+        android:text="Acceder"
+        android:textColorHighlight="#FFEB3B"
+        android:textColorLink="#F8E00C"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.429" />
+
+    <Button
         android:id="@+id/signInbutton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="211dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="192dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="8dp"
         android:background="#FF0B0B"
         android:backgroundTint="#090808"
         android:text="Registar"
@@ -21,17 +39,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/loginbutton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.429" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -57,24 +76,5 @@
             android:orientation="horizontal" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/loginbutton"
-        android:layout_width="211dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="10dp"
-        android:background="#FFEB3B"
-        android:backgroundTint="#D8C623"
-        android:text="Acceder"
-        android:textColorHighlight="#FFEB3B"
-        android:textColorLink="#F8E00C"
-        android:textSize="20sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
