@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Proyecto_app_gym"
         tools:targetApi="31">
         <activity
+            android:name=".TomaDeDatos"
+            android:exported="false" />
+        <activity
             android:name=".AuthActivity"
             android:exported="true">
             <intent-filter>
