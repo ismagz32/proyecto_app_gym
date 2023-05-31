@@ -1,47 +1,98 @@
 package com.example.proyecto_app_gym;
 
-import static android.content.ContentValues.TAG;
+public class Rutina {
+    String email;
+    String DiaDeSemana="";
+    String Ejercicio1=null;
+    String Ejercicio2=null;
+    String Ejercicio3=null;
+    String Ejercicio4=null;
+    String Ejercicio5=null;
+    String EjercicioCardioVascular;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+    public String getEjercicioCardioVascular() {
+        return EjercicioCardioVascular;
+    }
 
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
+    public void setEjercicioCardioVascular(String ejercicioCardioVascular) {
+        EjercicioCardioVascular = ejercicioCardioVascular;
+    }
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-public class Rutina extends AppCompatActivity {
-    private FirebaseFirestore db= FirebaseFirestore.getInstance();
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDiaDeSemana() {
+        return DiaDeSemana;
+    }
+
+    public void setDiaDeSemana(String diaDeSemana) {
+        DiaDeSemana = diaDeSemana;
+    }
+
+    public String getEjercicio1() {
+        return Ejercicio1;
+    }
+
+    public void setEjercicio1(String ejercicio1) {
+        Ejercicio1 = ejercicio1;
+    }
+
+    public String getEjercicio2() {
+        return Ejercicio2;
+    }
+
+    public void setEjercicio2(String ejercicio2) {
+        Ejercicio2 = ejercicio2;
+    }
+
+    public String getEjercicio3() {
+        return Ejercicio3;
+    }
+
+    public void setEjercicio3(String ejercicio3) {
+        Ejercicio3 = ejercicio3;
+    }
+
+    public String getEjercicio4() {
+        return Ejercicio4;
+    }
+
+    public void setEjercicio4(String ejercicio4) {
+        Ejercicio4 = ejercicio4;
+    }
+
+    public String getEjercicio5() {
+        return Ejercicio5;
+    }
+
+    public void setEjercicio5(String ejercicio5) {
+        Ejercicio5 = ejercicio5;
+    }
+
+
+
+    public Rutina(String mail) {
+
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rutina);
-
+    public String toString() {
+        return "Rutina{" +
+                "email='" + email + '\'' +
+                ", DiaDeSemana='" + DiaDeSemana + '\'' +
+                ", Ejercicio1='" + Ejercicio1 + '\'' +
+                ", Ejercicio2='" + Ejercicio2 + '\'' +
+                ", Ejercicio3='" + Ejercicio3 + '\'' +
+                ", Ejercicio4='" + Ejercicio4 + '\'' +
+                ", Ejercicio5='" + Ejercicio5 + '\'' +
+                ", EjercicioCardioVascular='" + EjercicioCardioVascular + '\'' +
+                '}';
     }
 
 
-    private void asignacionEjercicio() {
-        db.collection("ejercicios")
-                .whereEqualTo("musculo", "pecho")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Toast.makeText(Rutina.this,  ""+document.get("musculo"), Toast.LENGTH_SHORT).show();
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-
-    }
 }
