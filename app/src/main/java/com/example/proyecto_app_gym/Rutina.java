@@ -76,10 +76,10 @@ public class Rutina {
     }
 
 
-
-    public Rutina(String mail) {
-
+    public Rutina(String email) {
+        this.email = email;
     }
+
     @Override
     public String toString() {
         return "Rutina{" +

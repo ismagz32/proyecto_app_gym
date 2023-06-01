@@ -5,9 +5,11 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,7 +27,7 @@ import java.util.HashMap;
 public class TomaDeDatos extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    Button btnSave;
+    Button btnSave,btnCrear;
     String email;
 
     EditText etAltura, etPeso, etActividad, etEdad;
@@ -52,16 +54,23 @@ public class TomaDeDatos extends AppCompatActivity {
         etPeso = findViewById(R.id.editTextPeso);
         etActividad = findViewById(R.id.editTextActividad);
         etAltura = findViewById(R.id.editTextAltura);
-
+        btnCrear=findViewById(R.id.buttonRutina);
 
         btnSave = findViewById(R.id.buttonSave);
 
-        btnSave.setOnClickListener(view -> {
-            guardar();
+
+        btnCrear.setOnClickListener(view -> {
+            crearRutina();
         });
     }
 
-    private void guardar() {
+    private void crearRutina(){
+        Intent i = new Intent(this, PlanDeEntreno.class);
+        i.putExtra("email", email);
+        Toast.makeText(TomaDeDatos.this, "Creando rutina", Toast.LENGTH_SHORT).show();
+        startActivity(i);
+    }
+    public void guardar(View view) {
         if (TextUtils.isEmpty(etEdad.getText())) {
             etEdad.setError("el campo es obligatorio");
             etEdad.requestFocus();
@@ -194,6 +203,7 @@ public class TomaDeDatos extends AppCompatActivity {
         for (Rutina r : DiasDeRutina) {
 
             //System.out.println("estoy dentro");
+            DatosRutina.put("email", r.getEmail());
             DatosRutina.put("dia", r.getDiaDeSemana());
             DatosRutina.put("Cardio", r.EjercicioCardioVascular);
             DatosRutina.put("Ejercicio1", r.getEjercicio1());
@@ -201,7 +211,7 @@ public class TomaDeDatos extends AppCompatActivity {
             DatosRutina.put("Ejercicio3", r.getEjercicio3());
             DatosRutina.put("Ejercicio4", r.getEjercicio4());
             DatosRutina.put("Ejercicio5", r.getEjercicio5());
-            db.collection("Rutinas").document("dia" + contador+email).set(DatosRutina);
+            db.collection("Rutinas").document(r.getDiaDeSemana()+"_" + contador+email).set(DatosRutina);
             contador++;
             //System.out.println("soy contador"+contador);
         }
@@ -287,7 +297,7 @@ public class TomaDeDatos extends AppCompatActivity {
                         if (contador == 0)
                             DiasDeRutina.get(dia).setEjercicio3(document.getId());
                         else if (contador == 1)
-                            DiasDeRutina.get(dia).setEjercicio5(document.getId());
+                            DiasDeRutina.get(dia).setEjercicio4(document.getId());
                         contador++;
                     }
                 } else {
