@@ -46,7 +46,6 @@ public class TomaDeDatos extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toma_de_datos);
-
         TextView texto = (TextView) findViewById(R.id.textViewemail);
         email = getIntent().getExtras().getString("email");
         texto.setText(texto.getText() + " " + email);
@@ -185,7 +184,7 @@ public class TomaDeDatos extends AppCompatActivity {
 
         }
 
-        //Toast.makeText(TomaDeDatos.this, ""+DiasDeRutina.get(0).getEjercicio1(), Toast.LENGTH_SHORT).show();
+
         HashMap<String, String> DatosRutina = new HashMap<>();
         int contador = 1;
         //System.out.println("estoy fuera"+DiasDeRutina.size());
@@ -380,10 +379,8 @@ public class TomaDeDatos extends AppCompatActivity {
 
                         if (contador == 0) {
                             DiasDeRutina.get(dia).setEjercicio1(document.getId());
-                            Toast.makeText(TomaDeDatos.this, "tus dientes" + DiasDeRutina.get(dia).getEjercicio1(), Toast.LENGTH_SHORT).show();
                         } else if (contador == 1) {
                             DiasDeRutina.get(dia).setEjercicio2(document.getId());
-                            Toast.makeText(TomaDeDatos.this, "tus muelas" + DiasDeRutina.get(dia).getEjercicio2(), Toast.LENGTH_SHORT).show();
                         }
                         contador++;
                     }
@@ -409,7 +406,6 @@ public class TomaDeDatos extends AppCompatActivity {
                         else if (contador == 1)
                             DiasDeRutina.get(dia).setEjercicio4(document.getId());
                         contador++;
-                        // Toast.makeText(TomaDeDatos.this, ""+document.getId(), Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.getException());
@@ -430,7 +426,6 @@ public class TomaDeDatos extends AppCompatActivity {
                 }
             }
         });
-        Toast.makeText(TomaDeDatos.this, "adios" + DiasDeRutina.get(dia).getEjercicio1(), Toast.LENGTH_SHORT).show();
 
     }
 
