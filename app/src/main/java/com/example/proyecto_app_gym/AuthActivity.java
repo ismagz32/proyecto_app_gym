@@ -1,11 +1,14 @@
 package com.example.proyecto_app_gym;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +20,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -25,6 +30,7 @@ public class AuthActivity extends AppCompatActivity {
     Button btnReg;
     Button btnAcc;
     FirebaseAuth mAuth;
+    boolean existe=false;
     private FirebaseFirestore db= FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +52,7 @@ public class AuthActivity extends AppCompatActivity {
 
     }
     private void registrar(){
-        Intent i = new Intent(this, TomaDeDatos.class);
+        Intent tomaDatos = new Intent(this, TomaDeDatos.class);
         String email = etRegEmail.getText().toString();
         String password = etRegPassword.getText().toString();
         if (TextUtils.isEmpty(email)){
@@ -60,9 +66,9 @@ public class AuthActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        i.putExtra("email", email);
+                        tomaDatos.putExtra("email", email);
                         Toast.makeText(AuthActivity.this, "Registro completado", Toast.LENGTH_SHORT).show();
-                        startActivity(i);
+                        startActivity(tomaDatos);
                     }else{
                         Toast.makeText(AuthActivity.this, "Error en el registro " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
@@ -71,7 +77,8 @@ public class AuthActivity extends AppCompatActivity {
         }
     }
     private void acceder(){
-        Intent i = new Intent(this, TomaDeDatos.class);
+        Intent tomaDatos = new Intent(this, TomaDeDatos.class);
+        Intent rutina=new Intent(this, PlanDeEntreno.class);
         String email = etRegEmail.getText().toString();
         String password = etRegPassword.getText().toString();
         if (TextUtils.isEmpty(email)){
@@ -84,10 +91,28 @@ public class AuthActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        i.putExtra("email", email);
-                        Toast.makeText(AuthActivity.this, "usuario correcto", Toast.LENGTH_SHORT).show();
-                        startActivity(i);
+                    if (task.isSuccessful()) {
+                        db.collection("Rutinas").whereEqualTo("email", email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        existe = true;
+                                    }
+                                    Toast.makeText(AuthActivity.this, "usuario correcto", Toast.LENGTH_SHORT).show();
+                                    if (existe){
+                                        startActivity(rutina);
+                                    }
+                                    else{
+                                        tomaDatos.putExtra("email", email);
+                                        startActivity(tomaDatos);
+                                    }
+                                } else {
+                                    Log.d(TAG, "Error getting documents: ", task.getException());
+                                }
+                            }
+                        });
+
                     }else{
                         Toast.makeText(AuthActivity.this, "error en el registro " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }

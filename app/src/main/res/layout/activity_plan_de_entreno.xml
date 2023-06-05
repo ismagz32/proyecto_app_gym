@@ -4,31 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#38A3A5"
+    android:backgroundTint="#C7F9CC"
     tools:context=".PlanDeEntreno">
 
 
     <Button
-        android:id="@+id/buttonInfoCardio"
+        android:id="@+id/buttonInfoEj1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="mostrarDatos"
+        android:background="#38A3A5"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="mostrarDatosEj1"
         android:text="info"
+        android:backgroundTint="#38A3A5"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintVertical_bias="0.345" />
 
     <Button
         android:id="@+id/buttonInfoEj3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="mostrarDatos"
+        android:background="#C7F9CC"
+        android:backgroundTint="#38A3A5"
+        android:textStyle="bold"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="mostrarDatosEj3"
         android:text="info"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.541" />
@@ -37,59 +47,79 @@
         android:id="@+id/buttonInfoEj5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="mostrarDatos"
+        android:background="#10E3DB"
+        android:backgroundTint="#38A3A5"
+
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="mostrarDatosEj5"
         android:text="info"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.737" />
 
     <Button
-        android:id="@+id/buttonInfoEj1"
+        android:id="@+id/buttonInfoEj2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="mostrarDatos"
+        android:background="#10E3DB"
+        android:backgroundTint="#38A3A5"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="mostrarDatosEj2"
         android:text="info"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintVertical_bias="0.445" />
+
+    <Button
+        android:id="@+id/buttonInfoCardio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#10E3DB"
+        android:backgroundTint="#38A3A5"
+        android:textStyle="bold"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="mostrarDatosCardio"
+        android:text="info"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.256" />
 
     <Button
         android:id="@+id/buttonInfoEj4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="mostrarDatos"
+        android:background="#10E3DB"
+        android:backgroundTint="#38A3A5"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="mostrarDatosEj4"
         android:text="info"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.638" />
 
-    <Button
-        android:id="@+id/buttonInfoEj2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="mostrarDatos"
-        android:text="info"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
-
     <TextView
         android:id="@+id/textViewEj4Nombre"
-        android:layout_width="121dp"
-        android:layout_height="46dp"
+        android:layout_width="172dp"
+        android:layout_height="41dp"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -98,10 +128,15 @@
         app:layout_constraintVertical_bias="0.639" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/buttonVideoEj4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video explicativo"
+
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="enlaceVideoEj4"
+        android:text="Video"
+        android:backgroundTint="#57CC99"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
@@ -110,10 +145,14 @@
         app:layout_constraintVertical_bias="0.641" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/buttonVideoEj5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video explicativo"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="enlaceVideoEj5"
+        android:text="Video"
+        android:backgroundTint="#57CC99"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
@@ -123,9 +162,11 @@
 
     <TextView
         android:id="@+id/textViewEj5Nombre"
-        android:layout_width="121dp"
-        android:layout_height="46dp"
+        android:layout_width="172dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -137,6 +178,8 @@
         android:id="@+id/buttonBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#22577A"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="Buscar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,10 +189,14 @@
         app:layout_constraintVertical_bias="0.156" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonVideoCardio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video explicativo"
+        android:backgroundTint="#57CC99"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="enlaceVideoCardio"
+        android:text="Video"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -158,10 +205,14 @@
         app:layout_constraintVertical_bias="0.256" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonVideoEj2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video explicativo"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="enlaceVideoEj2"
+        android:text="Video"
+        android:backgroundTint="#57CC99"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -171,9 +222,11 @@
 
     <TextView
         android:id="@+id/textViewEj2Nombre"
-        android:layout_width="121dp"
-        android:layout_height="46dp"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
@@ -183,9 +236,11 @@
 
     <TextView
         android:id="@+id/textViewEj3Nombre"
-        android:layout_width="121dp"
-        android:layout_height="46dp"
+        android:layout_width="174dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
@@ -195,9 +250,11 @@
 
     <TextView
         android:id="@+id/textViewCardioNombre"
-        android:layout_width="121dp"
-        android:layout_height="46dp"
+        android:layout_width="174dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
@@ -209,6 +266,7 @@
         android:id="@+id/spinnerDias"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/alegreya_sans_sc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -216,21 +274,27 @@
 
     <TextView
         android:id="@+id/textViewEj1Nombre"
-        android:layout_width="121dp"
-        android:layout_height="46dp"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonVideoEj3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video explicativo"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="enlaceVideoEj3"
+        android:text="Video"
+        android:backgroundTint="#57CC99"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -239,15 +303,27 @@
         app:layout_constraintVertical_bias="0.541" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonVideoEj1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Video explicativo"
+        android:fontFamily="@font/alegreya_sans_sc"
+        android:onClick="enlaceVideoEj1"
+        android:text="Video"
+        android:backgroundTint="#57CC99"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.348" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="152dp"
+        android:layout_height="153dp"
+        app:srcCompat="@drawable/entrenador"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="562dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

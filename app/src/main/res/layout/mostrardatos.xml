@@ -19,6 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:focusable="false"
+                android:fontFamily="@font/alegreya_sans_sc"
                 android:text="Repeticiones:" />
 
             <EditText
@@ -26,6 +27,7 @@
                 android:id="@+id/edit_Repes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya_sans_sc"
                 android:inputType="text" />
         </LinearLayout>
 
@@ -38,14 +40,16 @@
                 android:id="@+id/text_index2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya_sans_sc"
                 android:focusable="false"
                 android:text="dificultad" />
 
             <EditText
                 android:focusable="false"
-                android:id="@+id/edit_parameter2"
+                android:id="@+id/edit_dificultad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya_sans_sc"
                 android:inputType="text" />
         </LinearLayout>
 
@@ -58,13 +62,15 @@
                 android:id="@+id/text_index3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alegreya_sans_sc"
                 android:focusable="false"
                 android:text="Musculo" />
 
             <EditText
                 android:focusable="false"
-                android:id="@+id/edit_parameter3"
+                android:id="@+id/edit_musculo"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/alegreya_sans_sc"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
         </LinearLayout>

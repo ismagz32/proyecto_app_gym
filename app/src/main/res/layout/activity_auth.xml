@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#E6E8E6"
     tools:context=".AuthActivity">
 
     <Button
@@ -12,11 +13,12 @@
         android:layout_height="77dp"
         android:background="#FFEB3B"
         android:backgroundTint="#D8C623"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="Acceder"
         android:textColorHighlight="#FFEB3B"
         android:textColorLink="#F8E00C"
         android:textSize="20sp"
-        app:cornerRadius="20dp"
+        app:cornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -32,6 +34,7 @@
         android:layout_marginEnd="8dp"
         android:background="#FF0B0B"
         android:backgroundTint="#090808"
+        android:fontFamily="@font/alegreya_sans_sc"
         android:text="Registar"
         android:textColorHighlight="#F80505"
         android:textColorLink="#FA0B0B"
@@ -59,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:fontFamily="serif"
             android:hint="Escriba su Emaill"
             android:inputType="textEmailAddress" />
 
@@ -67,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:fontFamily="serif"
             android:hint="Contraseña"
             android:inputType="textPassword" />
 
@@ -76,5 +81,21 @@
             android:orientation="horizontal" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="264dp"
+        android:layout_height="289dp"
+        app:srcCompat="@drawable/gimnasia"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="400dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="165dp"
+        android:layout_height="143dp"
+        app:srcCompat="@drawable/gimnasio"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="3dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

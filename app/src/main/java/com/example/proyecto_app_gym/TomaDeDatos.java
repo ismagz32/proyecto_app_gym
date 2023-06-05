@@ -46,6 +46,7 @@ public class TomaDeDatos extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toma_de_datos);
+
         TextView texto = (TextView) findViewById(R.id.textViewemail);
         email = getIntent().getExtras().getString("email");
         texto.setText(texto.getText() + " " + email);
@@ -101,18 +102,6 @@ public class TomaDeDatos extends AppCompatActivity {
                 asignacionRequerimientos();
 
             asignacionEjercicio();
-            /*
-            DocumentReference docRef = db.collection("ejercicios").document("PressBanca");
-            docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    Ejercicio ej = documentSnapshot.toObject(Ejercicio.class);
-
-                }
-            });
-            */
-
-
         }
 
 
@@ -184,9 +173,9 @@ public class TomaDeDatos extends AppCompatActivity {
             //AL TENER 3 DIAS DE ENTRENO LO DIVIDIDIREMOS  A LO LARGO DE LA SEMANA
             DiasDeRutina.get(0).setDiaDeSemana("lunes");
             DiasDeRutina.get(1).setDiaDeSemana("martes");
-            DiasDeRutina.get(2).setDiaDeSemana("jueves");
-            DiasDeRutina.get(3).setDiaDeSemana("viernes");
-            DiasDeRutina.get(4).setDiaDeSemana("sabado");
+            DiasDeRutina.get(2).setDiaDeSemana("miercoles");
+            DiasDeRutina.get(3).setDiaDeSemana("jueves");
+            DiasDeRutina.get(4).setDiaDeSemana("viernes");
             //en este caso como son cinco dias añadiremos 2 dias de pierna ya que es un musculo muy grande
             rutinaEmpuje(0);
             rutinaTiron(1);
