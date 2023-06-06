@@ -39,6 +39,7 @@ public class PlanDeEntreno extends AppCompatActivity {
     String tiempoCardio,repeticiones;
     String url="https://youtube.com/shorts/EaR7aRC21jU";
     Button botonBuscar;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class PlanDeEntreno extends AppCompatActivity {
         textViewEj3Nombre = (TextView) findViewById(R.id.textViewEj3Nombre);
         textViewEj4Nombre = (TextView) findViewById(R.id.textViewEj4Nombre);
         textViewEj5Nombre = (TextView) findViewById(R.id.textViewEj5Nombre);
-
+        email = getIntent().getExtras().getString("email");
         buttonInfoCardio = findViewById(R.id.buttonInfoCardio);
         buttonInfoEj1 = findViewById(R.id.buttonInfoEj1);
         buttonInfoEj2 = findViewById(R.id.buttonInfoEj2);
@@ -479,7 +480,7 @@ public class PlanDeEntreno extends AppCompatActivity {
     }
 
     private void busqueda() {
-        db.collection("Rutinas").whereEqualTo("dia", spinnerDias.getSelectedItem().toString()).whereEqualTo("email", "isma@gmail.com").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("Rutinas").whereEqualTo("dia", spinnerDias.getSelectedItem().toString()).whereEqualTo("email", email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 boolean existe=false;

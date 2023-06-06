@@ -231,11 +231,7 @@ public class TomaDeDatos extends AppCompatActivity {
                 }
             }
         });
-        for (Rutina r :
-                DiasDeRutina) {
-
-        }
-        db.collection("ejercicios").whereEqualTo("musculo", "biceps").whereEqualTo("dificultad", dificultad).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("ejercicios").whereEqualTo("musculo", "biceps").whereEqualTo("dificultad", "media").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 int contador = 0;

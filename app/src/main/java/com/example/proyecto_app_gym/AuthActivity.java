@@ -101,6 +101,7 @@ public class AuthActivity extends AppCompatActivity {
                                     }
                                     Toast.makeText(AuthActivity.this, "usuario correcto", Toast.LENGTH_SHORT).show();
                                     if (existe){
+                                        rutina.putExtra("email", email);
                                         startActivity(rutina);
                                     }
                                     else{
