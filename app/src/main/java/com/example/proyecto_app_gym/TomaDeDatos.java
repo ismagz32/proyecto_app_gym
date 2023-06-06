@@ -211,7 +211,7 @@ public class TomaDeDatos extends AppCompatActivity {
         db.collection("ejercicios").whereEqualTo("musculo", "espalda").whereEqualTo("dificultad", dificultad).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                int contador = 0;//esta variable la vamos a usar para establecer los ejercicios de un grupo muscular, si queremos 2 ejercicios en la rutina pues tendremos que recorrer 2 posciciones del task.result
+                int contador = 0;//esta variable la vamos a usar para establecer los ejercicios de un grupo musculr, si queremos 2 ejercicios en la rutina pues tendremos que recorrer 2 posciciones del task.result
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
 
